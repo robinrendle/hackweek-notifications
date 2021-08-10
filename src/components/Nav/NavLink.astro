@@ -6,9 +6,17 @@ export interface Props {
 }
 const { active, icon, counter } = Astro.props;
 
+// let root = document.documentElement;
+
+// root.style.setProperty('counter', counter);
+
 ---
 
 <style lang="scss"> 
+  :root {
+    --counter: 0;
+  }
+
   a {
    display: block;
    color: var(--color-subtext);
@@ -16,9 +24,18 @@ const { active, icon, counter } = Astro.props;
    transition: color .3s linear;
    height: 34px;
    font-size: 15px;
+   display: flex;
+   align-items: center;
+
+   &[data-id-counter] {
+    &:after {
+      content: var(--counter);
+    }
+   }
 
    &[data-id-active] {
     color: white;
+
     &:before {
       content: "";
       width: 10px;
@@ -31,11 +48,21 @@ const { active, icon, counter } = Astro.props;
 
     &:hover {
      color: white;
+
+     svg g path {
+       fill: white !important;
+     }
    }
+  }
+
+  .content {
+    margin-left: 10px;
   }
 </style>
 
 <a href="#" data-id-active={active} data-id-count={counter}>
   {icon}
-  <slot />
+  <div class="content">
+    <slot />
+  </div>
 </a>

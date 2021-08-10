@@ -12,6 +12,8 @@ import Siren from './../icons/Siren.astro';
 import Settings from './../icons/Settings.astro';
 import Support from './../icons/Support.astro';
 import GraphLine from './../icons/GraphLine.astro';
+import Telescope from './../icons/Telescope.astro';
+import Stats from './../icons/Stats.astro';
 ---
 
 <style lang="scss">
@@ -42,6 +44,7 @@ import GraphLine from './../icons/GraphLine.astro';
   }
   .last-item {
     margin-top: auto;
+    margin-bottom: 15px;
   }
 
   .notifications {
@@ -58,11 +61,11 @@ import GraphLine from './../icons/GraphLine.astro';
     <NavLink icon={<Releases/>}>Releases</NavLink>
     <NavLink icon={<Support/>}>User Feedback</NavLink>
     <NavLink icon={<Siren/>}>Alerts</NavLink>
-    <NavLink>Discover</NavLink>
+    <NavLink icon={<Telescope/>}>Discover</NavLink>
   </div>
   <div class="section">
     <NavLink icon={<GraphLine/>}>Dashboards</NavLink>
-    <NavLink >Stats</NavLink>
+    <NavLink icon={<Stats/>}>Stats</NavLink>
   </div>
   <div class="section">
     <NavLink icon={<Settings/>}>Settings</NavLink>
