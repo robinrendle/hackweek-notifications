@@ -1,0 +1,25 @@
+---
+export interface Props {
+  active: boolean;
+}
+const { active } = Astro.props;
+---
+
+<style lang="scss"> 
+  a {
+   display: block;
+   color: var(--color-subtext);
+   text-decoration: none;
+   transition: color .3s linear;
+   height: 34px;
+   font-size: 15px;
+
+    &:hover {
+     color: white;
+   }
+  }
+</style>
+
+<a href="#">
+  <slot />
+</a>

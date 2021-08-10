@@ -1,0 +1,48 @@
+---
+import NavLink from './NavLink.astro';
+import Account from './Account.astro';
+---
+
+<style lang="scss">
+  nav {
+    background: linear-gradient(294.17deg, rgb(47, 25, 55) 35.57%, rgb(69, 38, 80) 92.42%, rgb(69, 38, 80) 92.42%);
+    max-width: 220px;
+    display: flex;
+    padding: 0 20px;
+
+    @media screen and (min-width: 767px) {
+      min-height: 100vh;
+      flex-direction: column;
+    }
+  }
+
+  .section {
+    margin: 8px 0;
+  }
+  .last-item {
+    margin-top: auto;
+  }
+</style>
+
+<nav>
+  <Account/>
+  <div class="section">
+    <NavLink>Projects</NavLink>
+    <NavLink>Issues</NavLink>
+    <NavLink>Performance</NavLink>
+    <NavLink>User Feedback</NavLink>
+    <NavLink>Alerts</NavLink>
+    <NavLink>Discover</NavLink>
+  </div>
+  <div class="section">
+    <NavLink>Dashboards</NavLink>
+    <NavLink>Stats</NavLink>
+  </div>
+  <div class="section">
+    <NavLink>Settings</NavLink>
+  </div>
+  <div class="section last-item">
+    <NavLink active>Notifications</NavLink>
+    <NavLink>Help</NavLink>
+  </div>
+</nav>

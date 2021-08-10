@@ -1,0 +1,36 @@
+---
+import Nav from './Nav/Nav.astro';
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Notifications - Sentry</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style/global.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+  <style lang="scss">
+    * {
+      background: #eee;
+    }
+
+    nav {
+      background: purple;
+      @media screen and (min-width: 767px) {
+        width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <Nav />
+  <main>
+    <slot/>
+  </main>
+</body>
+</html>
