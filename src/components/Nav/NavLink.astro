@@ -5,11 +5,6 @@ export interface Props {
   counter: string;
 }
 const { active, icon, counter } = Astro.props;
-
-// let root = document.documentElement;
-
-// root.style.setProperty('counter', counter);
-
 ---
 
 <style lang="scss"> 
@@ -33,16 +28,18 @@ const { active, icon, counter } = Astro.props;
     }
    }
 
-   &[data-id-active] {
+   &[data-active] {
     color: white;
 
     &:before {
       content: "";
-      width: 10px;
-      height: 10px;
-      background: red;
+      width: 5px;
+      height: 25px;
+      background: #6c5ec7;
       position: absolute;
-      left: -10px;
+      left: -20px;
+      border-radius: 0px 3px 3px 0px;
+      transition: background-color 0.15s linear 0s;
     }
    }
 
@@ -57,12 +54,15 @@ const { active, icon, counter } = Astro.props;
 
   .content {
     margin-left: 10px;
+    display: flex;
+    gap: 10px;
   }
 </style>
 
-<a href="#" data-id-active={active} data-id-count={counter}>
+<a href="#" data-active={active} data-id-count={counter}>
   {icon}
   <div class="content">
     <slot />
+      {counter ? `<div class="counter">${counter}</div>` : ''}
   </div>
 </a>

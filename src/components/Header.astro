@@ -1,0 +1,47 @@
+
+<style lang="scss">
+  .header {
+    background: #faf9fb;
+    border-bottom: 1px solid #c7bdcf;
+    padding: 30px 40px 0;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .tabs {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .active {
+    &:after {
+      content: "";
+      width: 100%;
+      background: #6c5fc6;
+      height: 3px;
+    }
+  }
+</style>
+
+
+<div class="header">
+  <h1>Notifications</h1>
+  <button>Settings</button>
+
+  <nav class="tabs">
+    <a href="#" class="active">All</a>
+    <a href="#">All</a>
+    <a href="#">All</a>
+    <a href="#">All</a>
+    <a href="#">All</a>
+    <a href="#">All</a>
+    <a href="#">All</a>
+  </nav>
+</div>

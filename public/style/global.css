@@ -5,6 +5,8 @@
 
 :root {
   --color-subtext: rgb(149, 134, 165);
+  --color-red: #F55459;
+
   font-family: "Rubik", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
     Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
@@ -16,4 +18,16 @@ body {
 
 h1 {
   font-weight: normal;
+}
+
+.counter {
+  background: var(--color-red);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  position: relative;
+  top: -1px;
 }
