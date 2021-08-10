@@ -1,8 +1,11 @@
 ---
 export interface Props {
   active: boolean;
+  icon: React.ReactNode;
+  counter: string;
 }
-const { active } = Astro.props;
+const { active, icon, counter } = Astro.props;
+
 ---
 
 <style lang="scss"> 
@@ -14,12 +17,25 @@ const { active } = Astro.props;
    height: 34px;
    font-size: 15px;
 
+   &[data-id-active] {
+    color: white;
+    &:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: red;
+      position: absolute;
+      left: -10px;
+    }
+   }
+
     &:hover {
      color: white;
    }
   }
 </style>
 
-<a href="#">
+<a href="#" data-id-active={active} data-id-count={counter}>
+  {icon}
   <slot />
 </a>

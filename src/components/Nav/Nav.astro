@@ -1,48 +1,74 @@
 ---
+import {ReactNode} from 'react'
 import NavLink from './NavLink.astro';
-import Account from './Account.astro';
+import NavAccount from './NavAccount.astro';
+
+import Project from './../icons/Project.astro';
+import Issues from './../icons/Issues.astro';
+import Perf from './../icons/Perf.astro';
+import Releases from './../icons/Releases.astro';
+import Broadcast from './../icons/Broadcast.astro';
+import Siren from './../icons/Siren.astro';
+import Settings from './../icons/Settings.astro';
+import Support from './../icons/Support.astro';
+import GraphLine from './../icons/GraphLine.astro';
 ---
 
 <style lang="scss">
   nav {
     background: linear-gradient(294.17deg, rgb(47, 25, 55) 35.57%, rgb(69, 38, 80) 92.42%, rgb(69, 38, 80) 92.42%);
-    max-width: 220px;
     display: flex;
     padding: 0 20px;
+    width: 100%;
+    overflow: scroll;
+    flex-wrap: nowrap;
 
     @media screen and (min-width: 767px) {
+      flex-wrap: wrap;
+      overflow: hidden;
       min-height: 100vh;
+      max-width: 220px;
       flex-direction: column;
     }
   }
 
   .section {
+    display: flex;
     margin: 8px 0;
+
+    @media screen and (min-width: 767px) {
+      flex-direction: column;
+    }
   }
   .last-item {
     margin-top: auto;
   }
+
+  .notifications {
+    color: white;
+  }
 </style>
 
 <nav>
-  <Account/>
+  <NavAccount/>
   <div class="section">
-    <NavLink>Projects</NavLink>
-    <NavLink>Issues</NavLink>
-    <NavLink>Performance</NavLink>
-    <NavLink>User Feedback</NavLink>
-    <NavLink>Alerts</NavLink>
+    <NavLink icon={<Project/>}>Projects</NavLink>
+    <NavLink icon={<Issues/>}>Issues</NavLink>
+    <NavLink icon={<Perf/>}>Performance</NavLink>
+    <NavLink icon={<Releases/>}>Releases</NavLink>
+    <NavLink icon={<Support/>}>User Feedback</NavLink>
+    <NavLink icon={<Siren/>}>Alerts</NavLink>
     <NavLink>Discover</NavLink>
   </div>
   <div class="section">
-    <NavLink>Dashboards</NavLink>
-    <NavLink>Stats</NavLink>
+    <NavLink icon={<GraphLine/>}>Dashboards</NavLink>
+    <NavLink >Stats</NavLink>
   </div>
   <div class="section">
-    <NavLink>Settings</NavLink>
+    <NavLink icon={<Settings/>}>Settings</NavLink>
   </div>
   <div class="section last-item">
-    <NavLink active>Notifications</NavLink>
-    <NavLink>Help</NavLink>
+    <NavLink active counter="3" icon={<Broadcast/>}>Notifications</NavLink>
+    <NavLink icon={<Support/>}>Help</NavLink>
   </div>
 </nav>

@@ -1,0 +1,46 @@
+<style lang="scss">
+  .account {
+    display: flex;
+    margin-bottom: 16px;
+    margin-top: 20px;
+  }
+
+  div {
+    color: var(--color-subtext);
+  }
+  .title {
+    color: white;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .wrapper {
+    display: none;
+
+    @media screen and (min-width: 767px) {
+      display: block;
+      margin-left: 16px;
+    }
+  }
+</style>
+
+<div class="account">
+  <div class="placeholder">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="32" rx="4" fill="white"/>
+<path d="M15.9998 20.125C14.1023 22.0225 14.1023 25.1025 15.9998 27L8.57484 19.575C6.59484 17.595 6.59484 14.405 8.57484 12.425L15.9998 5C17.8973 6.8975 17.8973 9.9775 15.9998 11.875L11.8748 16L15.9998 17.5675V20.125Z" fill="#9BA547"/>
+<path d="M15.9998 11.875C17.8973 9.9775 17.8973 6.8975 15.9998 5L23.4248 12.425C25.4048 14.405 25.4048 17.595 23.4248 19.575L15.9998 27C14.1023 25.1025 14.1023 22.0225 15.9998 20.125L20.1248 16L15.9998 14.4325V11.875Z" fill="#9BA547"/>
+</svg>
+
+  </div>
+  <div class="wrapper">
+    <div class="title">
+      Empower Plant
+    </div>
+    <div class="desc">
+      Jane Schmidt
+    </div>
+  </div>
+</div>

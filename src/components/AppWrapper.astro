@@ -1,5 +1,5 @@
 ---
-import Nav from './Nav/Nav.astro';
+import Nav from './nav/Nav.astro';
 ---
 
 <html lang="en">
@@ -17,10 +17,16 @@ import Nav from './Nav/Nav.astro';
   <style lang="scss">
     body {
       display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 767px) {
+        flex-direction: row;
+      }
     }
     main {
       background: #eee;
       width: 100%;
+      min-height: 100vh;
     }
   </style>
 </head>
