@@ -4,24 +4,35 @@ import Header from '../components/Header.astro';
 import Notification from '../components/Notification.astro';
 ---
 
+<style lang="scss">
+  .table {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+    gap: 10px;
+  }
+</style>
+
 <AppWrapper>
   <Header/>
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
-  <Notification />
+  <div class="table">
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+    <Notification />
+  </div>
 </AppWrapper>
