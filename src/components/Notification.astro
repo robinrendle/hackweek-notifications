@@ -1,10 +1,50 @@
+---
+export interface Props {
+  read: boolean;
+  title: string;
+}
+
+const {read, title} = Astro.props;
+---
+
 <style lang="scss">
   .notification {
     background: #ccc;
     padding: 20px;
+    border-radius: 3px;
+    display: flex;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      .actions {
+        background: #cccccc;
+        display: flex;
+        gap: 5px;
+        position: absolute;
+        right: 5px;
+      }
+    }
+  }
+  time {
+    margin-left: auto;
+  }
+  .actions {
+    width: 150px;
+    display: none;
   }
 </style>
 
 <div class="notification">
-  Notification
+  <input type="checkbox" />
+  {title}
+
+  <time class="date" datetime="2021-11-18T14:54:39.929-0400">
+    1 minute ago
+  </time>
+
+  <div class="actions">
+    <button>Done</button>
+    <button>Unsubscribe</button>
+  </div>
 </div>

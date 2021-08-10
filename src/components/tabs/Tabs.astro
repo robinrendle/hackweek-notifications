@@ -1,0 +1,22 @@
+---
+import TabItem from './TabItem.astro';
+---
+
+<style lang="scss">
+  .tabs {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    font-size: 16px;
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+</style>
+
+<nav class="tabs">
+  <TabItem active unread={74}>All</TabItem>
+  <TabItem unread={45}>Alerts</TabItem>
+  <TabItem unread={13}>Workflow</TabItem>
+  <TabItem unread={3}>Account</TabItem>
+  <TabItem unread={12}>What’s New</TabItem>
+</nav>

@@ -1,0 +1,40 @@
+---
+export interface Props {
+  active: string;
+  unread: number;
+}
+
+const {active, unread} = Astro.props;
+---
+
+<style lang="scss">
+  a {
+    color: #7c6b8d;
+    padding: 0 10px 10px;
+    text-decoration: none;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    display: flex;
+    gap: 5px;
+
+    &.active {
+      color: black;
+      position: relative;
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: "";
+        width: 100%;
+        background: #6c5fc6;
+        height: 3px;
+      }
+    }
+  }
+</style>
+
+<a href="#" class={active ? 'active' : ''}>
+  <slot/>
+  {unread ? `<div class="unread">${unread}</div>` : ''}
+</a>

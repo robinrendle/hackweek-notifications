@@ -63,6 +63,6 @@ const { active, icon, counter } = Astro.props;
   {icon}
   <div class="content">
     <slot />
-      {counter ? `<div class="counter">${counter}</div>` : ''}
+    {counter ? `<div class="counter">${counter}</div>` : ''}
   </div>
 </a>

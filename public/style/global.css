@@ -31,3 +31,15 @@ h1 {
   position: relative;
   top: -1px;
 }
+
+.unread {
+  display: grid;
+  place-items: center;
+  background: #c6becf;
+  border-radius: 20px;
+  width: 22px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+}
