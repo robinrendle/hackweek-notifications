@@ -46,10 +46,21 @@ import Check from '../components/icons/Check.astro'
   }
 
   time {
-    margin-left: auto;
+    color: #aaa;
     text-align: right;
-    color: var(--color-subtext);
-    min-width: 150px;
+    font-size: 12px;
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    background: white;
+
+    @media screen and (min-width: 767px) {
+      color: var(--color-subtext);
+      font-size: 16px;
+      position: static;
+      margin-left: auto;
+      min-width: 150px;
+    }
   }
 
   .actions {
@@ -100,12 +111,15 @@ import Check from '../components/icons/Check.astro'
   }
 
   .type {
-    display: flex;
-    margin-left: auto;
-    background: #eee;
-    font-size: 14px;
-    padding: 5px 8px;
-    border-radius: 3px;
+    display: none;
+    @media screen and (min-width: 767px) {
+      display: flex;
+      margin-left: auto;
+      background: #eee;
+      font-size: 14px;
+      padding: 5px 8px;
+      border-radius: 3px;
+    }
   }
 </style>
 

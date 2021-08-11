@@ -75,7 +75,7 @@ const { active, icon, counter } = Astro.props;
   }
 </style>
 
-<a href="#" data-active={active} data-id-count={counter}>
+<a href="#" data-active={active} data-id-count={counter} rel="preload">
   {icon}
   <div class="content">
     <slot />
