@@ -1,0 +1,88 @@
+---
+import AppWrapper from '../components/AppWrapper.astro';
+import Header from '../components/Header.astro';
+import Notification from '../components/Notification.astro';
+import Filters from '../components/Filters.astro';
+import Pagination from '../components/Pagination.astro';
+import Tabs from '../components/tabs/Tabs.astro';
+import TabItem from '../components/tabs/TabItem.astro';
+import Table from '../components/Table.astro';
+---
+
+<AppWrapper>
+  <Header>
+    <Tabs>
+      <TabItem unread={74} url="/">All</TabItem>
+      <TabItem unread={12} url="alerts" active>Alerts</TabItem>
+      <TabItem unread={7} url="workflow">Workflow</TabItem>
+      <TabItem unread={6} url="account">Account</TabItem>
+      <TabItem unread={12} url="new">What’s New</TabItem>
+    </Tabs>
+  </Header>
+  <Filters/>
+  <Table>
+
+    <Notification 
+      title='Notify me about New Issues' 
+      desc='TypeError - JavaScript'
+      type='Alerts' 
+      time='5 minutes ago'
+      read />
+    <Notification 
+      title='UI Transactions Low' 
+      desc='Below 1 in the last minute'
+      type='Alerts' 
+      time='5 minutes ago'/>
+    <Notification 
+      title='Crash Free Sessions Low' 
+      desc='Lower than 91.3% in the last minute'
+      type='Alerts' 
+      time='7 minutes ago'/>
+    <Notification 
+      title='Crash Free Sessions Low' 
+      desc='Lower than 93% in the last minute'
+      type='Alerts' 
+      time='25 minutes ago'/>
+    <Notification 
+      title='Crash Free Sessions Low' 
+      desc='Lower than 94% in the last minute'
+      type='Alerts' 
+      time='2 hours ago'/>
+    <Notification 
+      title='Cumulative Layout Shift Higher than 800ms' 
+      desc='We automatically detected a cumulative layout shift higher than 800ms'
+      type='Alerts' 
+      time='3 hours ago'/>
+    <Notification 
+      title='A lot of users fail to load the JS bundle' 
+      desc='More than 300 users in the last 10 minutes'
+      type='Alerts' 
+      time='3 hours ago'/>
+    <Notification 
+      title='Sample Event Failing' 
+      desc='More than 10 events in the last 24 hours'
+      type='Alerts' 
+      time='3 hours ago'/>
+    <Notification 
+      title='Affects some users' 
+      desc='TypeError – JavaScript'
+      type='Alerts' 
+      time='3 hours ago'/>
+    <Notification 
+      title='Affects some users' 
+      desc='TypeError – JavaScript'
+      type='Alerts' 
+      time='3 hours ago'/>
+    <Notification 
+      title='Affects some users' 
+      desc='TypeError – JavaScript'
+      type='Alerts' 
+      time='3 hours ago'/>
+    <Notification 
+      title='Crash Free Sessions Low' 
+      desc='Lower than 96% in the last minute'
+      type='Alerts' 
+      time='4 hours ago'/>
+  </Table>
+  <Pagination />
+</AppWrapper>

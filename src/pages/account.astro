@@ -1,0 +1,56 @@
+---
+import AppWrapper from '../components/AppWrapper.astro';
+import Header from '../components/Header.astro';
+import Notification from '../components/Notification.astro';
+import Filters from '../components/Filters.astro';
+import Pagination from '../components/Pagination.astro';
+import Tabs from '../components/tabs/Tabs.astro';
+import TabItem from '../components/tabs/TabItem.astro';
+import Table from '../components/Table.astro';
+---
+
+<AppWrapper>
+  <Header>
+    <Tabs>
+      <TabItem unread={40} url="/">All</TabItem>
+      <TabItem unread={12} url="alerts">Alerts</TabItem>
+      <TabItem unread={7} url="workflow">Workflow</TabItem>
+      <TabItem unread={6} url="account" active>Account</TabItem>
+      <TabItem unread={12} url="new">What’s New</TabItem>
+    </Tabs>
+  </Header>
+  <Filters/>
+  <Table>
+    <Notification 
+      title='Approve Request' 
+      desc='Jane Schmidt wants to join the #workflow team'
+      type='Account' 
+      time='1 minute ago'/>
+    <Notification 
+      title='Upgrade from your Trial' 
+      desc='Your Sentry trial account is ending in 4 days'
+      type='Account' 
+      time='2 minutes ago'/>
+    <Notification 
+      title='Update SDK' 
+      desc='The javascript project requires an update to @v1.3.1'
+      type='Account' 
+      time='2 minutes ago'/>
+    <Notification 
+      title='Approaching Quota' 
+      desc='Your org is about to exceed its event capacity'
+      type='Account' 
+      time='3 minutes ago'/>
+    <Notification 
+      title='Update Billing Information' 
+      desc='Your subscription failed, so we’ll try to charge you again in 2 days'
+      type='Account' 
+      time='10 minutes ago'/>
+    <Notification 
+      title='Approaching Quota' 
+      desc='Your org is about to exceed its event capacity'
+      type='Account' 
+      time='2 days ago'/>
+  </Table>
+  <Pagination />
+</AppWrapper>

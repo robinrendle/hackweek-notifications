@@ -2,9 +2,10 @@
 export interface Props {
   active: string;
   unread: number;
+  url: string;
 }
 
-const {active, unread} = Astro.props;
+const {active, unread, url} = Astro.props;
 ---
 
 <style lang="scss">
@@ -34,7 +35,7 @@ const {active, unread} = Astro.props;
   }
 </style>
 
-<a href="#" class={active ? 'active' : ''}>
+<a href={url} class={active ? 'active' : ''}>
   <slot/>
   {unread ? `<div class="unread">${unread}</div>` : ''}
 </a>

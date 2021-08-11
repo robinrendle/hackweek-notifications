@@ -5,50 +5,22 @@ import Notification from '../components/Notification.astro';
 import Filters from '../components/Filters.astro';
 import Pagination from '../components/Pagination.astro';
 import Tabs from '../components/tabs/Tabs.astro';
+import TabItem from '../components/tabs/TabItem.astro';
+import Table from '../components/Table.astro';
 ---
-
-<style lang="scss">
-  .table {
-    display: flex;
-    flex-direction: column;
-    margin: 0px 30px 0;
-    border: 1px solid #cdc5d4;
-    border-radius: 3px;
-  }
-  
-  .table-header {
-    border-radius: 3px 3px 0 0 ;
-    border-bottom: 1px solid #cdc5d4;
-    background: #faf9fb;
-    padding: 10px 28px 10px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .selectall {
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 500;
-    color: #776589;
-    display: flex;
-    gap: 8px;
-  }
-</style>
 
 <AppWrapper>
   <Header>
-    <Tabs />
+    <Tabs>
+      <TabItem unread={40} url="/" active>All</TabItem>
+      <TabItem unread={12} url="alerts">Alerts</TabItem>
+      <TabItem unread={7} url="workflow">Workflow</TabItem>
+      <TabItem unread={6} url="account">Account</TabItem>
+      <TabItem unread={12} url="new">What’s New</TabItem>
+    </Tabs>
   </Header>
   <Filters/>
-  <div class="table">
-    <div class="table-header">
-      <label for="#selectall" class="selectall">
-        <input type="checkbox" id="selectall"/>
-        Select all
-      </label>
-    </div>
-
+  <Table>
     <Notification 
       title='Approve Request' 
       desc='Jane Schmidt wants to join the #workflow team'
@@ -80,13 +52,13 @@ import Tabs from '../components/tabs/Tabs.astro';
       type='What’s New' 
       time='5 minutes ago'/>
     <Notification 
-      title='Alert: Notify me about New Issues' 
+      title='Notify me about New Issues' 
       desc='TypeError - JavaScript'
       type='Alerts' 
       time='5 minutes ago'
       read />
     <Notification 
-      title='Alert: UI Transactions Low' 
+      title='UI Transactions Low' 
       desc='Below 1 in the last minute'
       type='Alerts' 
       time='5 minutes ago'/>
@@ -97,7 +69,7 @@ import Tabs from '../components/tabs/Tabs.astro';
       time='6 minutes ago'
       read />
     <Notification 
-      title='Alert: Crash Free Sessions Low' 
+      title='Crash Free Sessions Low' 
       desc='Lower than 91.3% in the last minute'
       type='Alerts' 
       time='7 minutes ago'/>
@@ -126,6 +98,6 @@ import Tabs from '../components/tabs/Tabs.astro';
       desc='View a summary of the past week'
       type='Account' 
       time='10 minutes ago'/>
-  </div>
+  </Table>
   <Pagination />
 </AppWrapper>

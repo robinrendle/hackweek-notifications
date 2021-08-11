@@ -1,7 +1,3 @@
----
-import TabItem from './TabItem.astro';
----
-
 <style lang="scss">
   .tabs {
     margin-top: 20px;
@@ -15,9 +11,5 @@ import TabItem from './TabItem.astro';
 </style>
 
 <nav class="tabs">
-  <TabItem unread={74} active>All</TabItem>
-  <TabItem unread={45}>Alerts</TabItem>
-  <TabItem unread={13}>Workflow</TabItem>
-  <TabItem unread={3}>Account</TabItem>
-  <TabItem unread={12}>What’s New</TabItem>
+  <slot />
 </nav>

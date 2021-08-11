@@ -1,0 +1,62 @@
+---
+import AppWrapper from '../components/AppWrapper.astro';
+import Header from '../components/Header.astro';
+import Notification from '../components/Notification.astro';
+import Filters from '../components/Filters.astro';
+import Pagination from '../components/Pagination.astro';
+import Tabs from '../components/tabs/Tabs.astro';
+import TabItem from '../components/tabs/TabItem.astro';
+import Table from '../components/Table.astro';
+---
+
+<AppWrapper>
+  <Header>
+    <Tabs>
+      <TabItem unread={40} url="/">All</TabItem>
+      <TabItem unread={12} url="alerts">Alerts</TabItem>
+      <TabItem unread={7} url="workflow" active>Workflow</TabItem>
+      <TabItem unread={6} url="account">Account</TabItem>
+      <TabItem unread={12} url="new">What’s New</TabItem>
+    </Tabs>
+  </Header>
+  <Filters/>
+  <Table>
+    <Notification 
+      title='Issue assigned to #workflow by Jane Schmidt' 
+      desc='TypeError - JavaScript'
+      type='Workflow' 
+      time='6 minutes ago'
+      read />
+    <Notification 
+      title='New comment by Jane Schmidt' 
+      desc='“This might be related to issue 717”'
+      type='Workflow' 
+      time='8 minutes ago'/>
+    <Notification 
+      title='Issue assigned to you by Jane Schmidt' 
+      desc='TypeError - JavaScript'
+      type='Workflow' 
+      time='9 minutes ago'/>
+    <Notification 
+      title='Issue assigned to you by Jane Schmidt' 
+      desc='TypeError - JavaScript'
+      type='Workflow' 
+      time='7 minutes ago'/>
+    <Notification 
+      title='Issue assigned to you by Jane Schmidt' 
+      desc='TypeError - JavaScript'
+      type='Workflow' 
+      time='7 minutes ago'/>
+    <Notification 
+      title='Issue assigned to you by Jane Schmidt' 
+      desc='TypeError - JavaScript'
+      type='Workflow' 
+      time='7 minutes ago'/>
+    <Notification 
+      title='Issue assigned to you by Jane Schmidt' 
+      desc='TypeError - JavaScript'
+      type='Workflow' 
+      time='7 minutes ago'/>
+  </Table>
+  <Pagination />
+</AppWrapper>

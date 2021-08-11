@@ -30,7 +30,7 @@ import Check from '../components/icons/Check.astro'
     }
     
     &:hover {
-      background: rgba(0,0,140,0.03);
+      background: rgba(0,0,180,0.03);
       cursor: pointer;
       .date {
         opacity: 0;
@@ -84,6 +84,7 @@ import Check from '../components/icons/Check.astro'
       background: #ccc;
       display: block;
       border-radius: 50%;
+      transition: .2s background ease ;
     }
   }
 
@@ -108,7 +109,7 @@ import Check from '../components/icons/Check.astro'
   }
 </style>
 
-<div class={read ? 'notification notification-read' : 'notification'} onclick="this.querySelector('.status').classList.remove('status-unread');">
+<div class={read ? 'notification notification-read' : 'notification'} onclick="this.querySelector('.status').classList.toggle('status-unread');">
   <div class="wrapper">
     <div class={read ? 'status' : 'status status-unread'}></div>
     <input type="checkbox" class="checkbox" />

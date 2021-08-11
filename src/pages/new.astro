@@ -1,0 +1,66 @@
+---
+import AppWrapper from '../components/AppWrapper.astro';
+import Header from '../components/Header.astro';
+import Notification from '../components/Notification.astro';
+import Filters from '../components/Filters.astro';
+import Pagination from '../components/Pagination.astro';
+import Tabs from '../components/tabs/Tabs.astro';
+import TabItem from '../components/tabs/TabItem.astro';
+import Table from '../components/Table.astro';
+---
+
+<AppWrapper>
+  <Header>
+    <Tabs>
+      <TabItem unread={40} url="/">All</TabItem>
+      <TabItem unread={12} url="alerts">Alerts</TabItem>
+      <TabItem unread={7} url="workflow">Workflow</TabItem>
+      <TabItem unread={6} url="account">Account</TabItem>
+      <TabItem unread={12} url="new" active>What’s New</TabItem>
+    </Tabs>
+  </Header>
+  <Filters/>
+  <Table>
+    <Notification 
+      title='Do Math in Discover' 
+      desc='Quickly track status-based and performance-based SLOs'
+      type='What’s New' 
+      time='4 minutes ago'/>
+    <Notification 
+      title='Filter Releases by Adoption' 
+      desc='Now you can filter out releases that aren’t used by users'
+      type='What’s New' 
+      time='5 minutes ago'/>
+    <Notification 
+      title='Weekly Summary' 
+      desc='View a summary of the past week'
+      type='What’s New' 
+      time='10 minutes ago'/>
+    <Notification 
+      title='Team Summary' 
+      desc='View a summary of how your team worked together in the past week'
+      type='What’s New' 
+      time='10 minutes ago'/>
+    <Notification 
+      title='Sentry’s New Mobile App for Managing Releases' 
+      desc='Learn more about how our mobile app works'
+      type='What’s New' 
+      time='10 minutes ago'/>
+    <Notification 
+      title='Instrumenting our Frontend Test Suite' 
+      desc='And fixing what we found'
+      type='What’s New' 
+      time='3 days ago'/>
+    <Notification 
+      title='Root out the odd operation with Operations Breakdown' 
+      desc='How we dogfood Sentry to fix tough performance problems'
+      type='What’s New' 
+      time='6 days ago'/>
+    <Notification 
+      title='Sentry Application Monitoring with Next.js' 
+      desc='Not to brag but we shipped an SDK for your Next project. Sorry.'
+      type='What’s New' 
+      time='8 days ago'/>
+  </Table>
+  <Pagination />
+</AppWrapper>
