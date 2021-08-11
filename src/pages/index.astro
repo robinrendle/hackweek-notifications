@@ -3,9 +3,10 @@ import AppWrapper from '../components/AppWrapper.astro';
 import Header from '../components/Header.astro';
 import Notification from '../components/Notification.astro';
 import Filters from '../components/Filters.astro';
-import Left from '../components/icons/Left.astro';
-import Right from '../components/icons/Right.astro';
+import Pagination from '../components/Pagination.astro';
+import Tabs from '../components/tabs/Tabs.astro';
 ---
+
 <style lang="scss">
   .table {
     display: flex;
@@ -33,31 +34,12 @@ import Right from '../components/icons/Right.astro';
     display: flex;
     gap: 8px;
   }
-
-  .pagination {
-    padding: 20px 30px 100px; 
-    display: flex;
-    div {
-      display: flex;
-      gap: 0px;
-      margin-left: auto;
-    }
-    button {
-      padding: 10px;
-
-      &:first-of-type {
-        border-radius: 3px 0px 0px 3px;
-      }
-      &:last-of-type {
-        border-left: 0; 
-        border-radius: 0px 3px 3px 0px;
-      }
-    }
-  }
 </style>
 
 <AppWrapper>
-  <Header/>
+  <Header>
+    <Tabs />
+  </Header>
   <Filters/>
   <div class="table">
     <div class="table-header">
@@ -141,14 +123,9 @@ import Right from '../components/icons/Right.astro';
       time='10 minutes ago'/>
     <Notification 
       title='Weekly Summary' 
-      desc='View a summary of the past week.'
+      desc='View a summary of the past week'
       type='Account' 
       time='10 minutes ago'/>
   </div>
-  <div class="pagination">
-    <div>
-      <button><Left/></button>
-      <button><Right/></button>
-    </div>
-  </div>
+  <Pagination />
 </AppWrapper>

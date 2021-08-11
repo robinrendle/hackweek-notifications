@@ -10,11 +10,12 @@ import TabItem from './TabItem.astro';
     font-size: 16px;
     flex-wrap: nowrap;
     overflow: scroll;
+    text-align: center;
   }
 </style>
 
 <nav class="tabs">
-  <TabItem active unread={74}>All</TabItem>
+  <TabItem unread={74} active>All</TabItem>
   <TabItem unread={45}>Alerts</TabItem>
   <TabItem unread={13}>Workflow</TabItem>
   <TabItem unread={3}>Account</TabItem>

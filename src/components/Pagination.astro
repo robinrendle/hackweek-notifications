@@ -1,0 +1,36 @@
+---
+import Left from './icons/Left.astro';
+import Right from './icons/Right.astro';
+---
+
+<style lang="scss">
+ .pagination {
+   padding: 20px 30px 100px; 
+   display: flex;
+   div {
+     display: flex;
+     gap: 0px;
+     margin-left: auto;
+   }
+   button {
+     padding: 10px;
+
+     &:first-of-type {
+       border-radius: 3px 0px 0px 3px;
+     }
+     &:last-of-type {
+       border-left: 0; 
+       border-radius: 0px 3px 3px 0px;
+     }
+   }
+ }
+ </style>
+
+<div class="pagination">
+  <div>
+    <button><Left/></button>
+    <button><Right/></button>
+  </div>
+</div>
+
+

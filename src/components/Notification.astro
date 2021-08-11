@@ -103,12 +103,12 @@ import Check from '../components/icons/Check.astro'
     margin-left: auto;
     background: #eee;
     font-size: 14px;
-    padding: 5px;
+    padding: 5px 8px;
     border-radius: 3px;
   }
 </style>
 
-<div class="notification" data-read={read}>
+<div class={read ? 'notification notification-read' : 'notification'} onclick="this.querySelector('.status').classList.remove('status-unread');">
   <div class="wrapper">
     <div class={read ? 'status' : 'status status-unread'}></div>
     <input type="checkbox" class="checkbox" />
