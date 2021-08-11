@@ -2,49 +2,125 @@
 export interface Props {
   read: boolean;
   title: string;
+  desc: string;
+  type: string;
+  time: string;
 }
 
-const {read, title} = Astro.props;
+const {read, title, desc, type, time} = Astro.props;
+
+import Bell from '../components/icons/Bell.astro'
+import Check from '../components/icons/Check.astro'
 ---
 
 <style lang="scss">
   .notification {
-    background: #ccc;
-    padding: 20px;
-    border-radius: 3px;
+    --notification-background: white;
+    background: var(--notification-background);
+    padding: 16px 20px 16px 10px;
     display: flex;
+    align-items: center;
     position: relative;
-
+    border-bottom: 1px solid #e7e1ec;
+    color: var(--color-text);
+    
     &:hover {
+      background: rgba(0,0,140,0.05);
       cursor: pointer;
+      .date {
+        opacity: 0;
+      }
       .actions {
-        background: #cccccc;
         display: flex;
         gap: 5px;
         position: absolute;
-        right: 5px;
+        right: -5px;
+        top: 18px;
       }
     }
   }
+
   time {
     margin-left: auto;
+    text-align: right;
+    color: var(--color-subtext);
+    min-width: 150px;
   }
+
   .actions {
-    width: 150px;
+    width: 100px;
+    position: absolute; 
+    right: 0;
     display: none;
+
+    button {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: 1px;
+      text-decoration: none;
+      color: var(--color-link);
+    }
+  }
+
+  .status {
+    &:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #ccc;
+      display: block;
+      border-radius: 50%;
+    }
+  }
+
+  .status-unread:before {
+    background: var(--color-theme);
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .type {
+    display: flex;
+    margin-left: auto;
   }
 </style>
 
-<div class="notification">
-  <input type="checkbox" />
-  {title}
+<div class="notification" data-read={read}>
+  <div class="wrapper">
+    <div class={read ? 'status' : 'status status-unread'}></div>
+    <input type="checkbox" />
+
+    <div class="title">
+      <a href="#">{title}</a>
+      {desc}
+    </div>
+    
+    <div class="type">
+      {type}
+    </div>
+  </div>
+
 
   <time class="date" datetime="2021-11-18T14:54:39.929-0400">
-    1 minute ago
+    {time}
   </time>
 
+
   <div class="actions">
-    <button>Done</button>
-    <button>Unsubscribe</button>
+    <button><Check /></button>
+    <button><Bell /></button>
   </div>
 </div>

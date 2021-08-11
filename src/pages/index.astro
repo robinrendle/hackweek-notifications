@@ -9,30 +9,119 @@ import Filters from '../components/Filters.astro';
   .table {
     display: flex;
     flex-direction: column;
-    margin: 20px 30px 0;
-    gap: 10px;
+    margin: 0px 30px 0;
+    border: 1px solid #cdc5d4;
+    border-radius: 3px;
+  }
+  
+  .table-header {
+    border-radius: 3px 3px 0 0 ;
+    border-bottom: 1px solid #cdc5d4;
+    background: #faf9fb;
+    padding: 10px 38px 10px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .selectall {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    color: #776589;
+    display: flex;
+    gap: 8px;
   }
 </style>
 
 <AppWrapper>
   <Header/>
   <Filters/>
+
   <div class="table">
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
-    <Notification />
+    <div class="table-header">
+      <label for="#selectall" class="selectall">
+        <input type="checkbox" id="selectall"/>
+        Select all
+      </label>
+    </div>
+
+    <Notification 
+      title='Approve Request' 
+      desc='Jane Schmidt wants to join the #workflow team'
+      type='Account' 
+      time='1 minute ago'/>
+    <Notification 
+      title='Upgrade from your Trial' 
+      desc='Your Sentry trial account is ending in 4 days'
+      type='Account' 
+      time='2 minutes ago'/>
+    <Notification 
+      title='Update SDK' 
+      desc='The javascript project requires an update to @v1.3.1'
+      type='Account' 
+      time='2 minutes ago'/>
+    <Notification 
+      title='Approaching Quota' 
+      desc='Your org is about to exceed its event capacity'
+      type='Account' 
+      time='3 minutes ago'/>
+    <Notification 
+      title='Do Math in Discover' 
+      desc='Quickly track status-based and performance-based SLOs'
+      type='What’s New' 
+      time='4 minutes ago'/>
+    <Notification 
+      title='Filter Releases by Adoption' 
+      desc='Now you can filter out releases that aren’t used by users'
+      type='What’s New' 
+      time='5 minutes ago'/>
+    <Notification 
+      title='Alert: Notify me about New Issues' 
+      desc='TypeError - JavaScript'
+      type='Alerts' 
+      time='5 minutes ago'
+      read />
+    <Notification 
+      title='Alert: UI Transactions Low' 
+      desc='Below 1 in the last minute'
+      type='Alerts' 
+      time='5 minutes ago'/>
+    <Notification 
+      title='Issue assigned to #workflow by Jane Schmidt' 
+      desc='TypeError - JavaScript'
+      type='Workflow' 
+      time='5 minutes ago'
+      read />
+    <Notification 
+      title='Alert: Crash Free Sessions Low' 
+      desc='Lower than 91.3% in the last minute'
+      type='Alerts' 
+      time='7 minutes ago'/>
+    <Notification 
+      title='New comment by Jane Schmidt' 
+      desc='“This might be related to issue 717”'
+      type='Workflow' 
+      time='7 minutes ago'/>
+    <Notification 
+      title='Issue assigned to you by Jane Schmidt' 
+      desc='TypeError - JavaScript'
+      type='Workflow' 
+      time='7 minutes ago'/>
+    <Notification 
+      title='Issue assigned to you by Jane Schmidt' 
+      desc='TypeError - JavaScript'
+      type='Workflow' 
+      time='7 minutes ago'/>
+    <Notification 
+      title='Update Billing Information' 
+      desc='Your subscription failed. We’ll try to charge you again in 2 days'
+      type='Account' 
+      time='10 minutes ago'/>
+    <Notification 
+      title='Weekly Summary' 
+      desc='View a summary of the past week.'
+      type='Account' 
+      time='10 minutes ago'/>
   </div>
 </AppWrapper>
