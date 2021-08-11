@@ -15,9 +15,15 @@
   font-family: var(--font-family);
 }
 
+html,
+body {
+  overflow: scroll;
+  height: 100%;
+}
+
 body {
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 
 h1 {
@@ -54,5 +60,11 @@ h1 {
 
 button {
   -webkit-appearance: none;
-  border: 1px solid #aaa;
+  border: 1px solid #c5bdcf;
+  background: #ffffff;
+  cursor: pointer;
+
+  svg {
+    opacity: 0.9;
+  }
 }

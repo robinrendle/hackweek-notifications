@@ -3,7 +3,17 @@ import AppWrapper from '../components/AppWrapper.astro';
 import Header from '../components/Header.astro';
 import Notification from '../components/Notification.astro';
 import Filters from '../components/Filters.astro';
+import Left from '../components/icons/Left.astro';
+import Right from '../components/icons/Right.astro';
 ---
+
+<script>
+const checkboxAll = document.querySelector('#selectall');
+const otherCheckboxes = document.querySelectorAll('.checkbox');
+checkboxAll.addEventListener('click', function(e){
+  otherCheckboxes.checked;
+});
+</script>
 
 <style lang="scss">
   .table {
@@ -18,7 +28,7 @@ import Filters from '../components/Filters.astro';
     border-radius: 3px 3px 0 0 ;
     border-bottom: 1px solid #cdc5d4;
     background: #faf9fb;
-    padding: 10px 38px 10px;
+    padding: 10px 28px 10px;
     height: 44px;
     display: flex;
     align-items: center;
@@ -32,12 +42,32 @@ import Filters from '../components/Filters.astro';
     display: flex;
     gap: 8px;
   }
+
+  .pagination {
+    padding: 20px 30px 100px; 
+    display: flex;
+    div {
+      display: flex;
+      gap: 0px;
+      margin-left: auto;
+    }
+    button {
+      padding: 10px;
+
+      &:first-of-type {
+        border-radius: 3px 0px 0px 3px;
+      }
+      &:last-of-type {
+        border-left: 0;
+        border-radius: 0px 3px 3px 0px;
+      }
+    }
+  }
 </style>
 
 <AppWrapper>
   <Header/>
   <Filters/>
-
   <div class="table">
     <div class="table-header">
       <label for="#selectall" class="selectall">
@@ -123,5 +153,11 @@ import Filters from '../components/Filters.astro';
       desc='View a summary of the past week.'
       type='Account' 
       time='10 minutes ago'/>
+  </div>
+  <div class="pagination">
+    <div>
+      <button><Left/></button>
+      <button><Right/></button>
+    </div>
   </div>
 </AppWrapper>

@@ -23,9 +23,14 @@ import Check from '../components/icons/Check.astro'
     position: relative;
     border-bottom: 1px solid #e7e1ec;
     color: var(--color-text);
+
+    &:last-of-type {
+      border-bottom: none;
+      border-radius: 3px;
+    }
     
     &:hover {
-      background: rgba(0,0,140,0.05);
+      background: rgba(0,0,140,0.03);
       cursor: pointer;
       .date {
         opacity: 0;
@@ -95,13 +100,17 @@ import Check from '../components/icons/Check.astro'
   .type {
     display: flex;
     margin-left: auto;
+    background: #eee;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 3px;
   }
 </style>
 
 <div class="notification" data-read={read}>
   <div class="wrapper">
     <div class={read ? 'status' : 'status status-unread'}></div>
-    <input type="checkbox" />
+    <input type="checkbox" class="checkbox" />
 
     <div class="title">
       <a href="#">{title}</a>

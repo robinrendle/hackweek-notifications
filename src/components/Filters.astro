@@ -38,9 +38,18 @@ import Search from '../components/icons/Search.astro';
   
   .buttonbar {
     display: flex;
-    button:nth-child(1) {
+    width: 200px;
+    button {
+      font-weight: 500;
+      width: 100%;
+    }
+    button:first-child {
       border-radius: 3px 0 0 3px;
       margin-right: -1px;
+    }
+
+    button:last-child {
+      border-radius: 0px 3px 3px 0px;
     }
 
     .active {
@@ -59,6 +68,6 @@ import Search from '../components/icons/Search.astro';
   </div>
   <div class="buttonbar">
     <button class="active">Unread</button>
-    <button>Read</button>
+    <button>Archived</button>
   </div>
 </div>
