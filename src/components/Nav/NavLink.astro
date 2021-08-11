@@ -21,6 +21,14 @@ const { active, icon, counter } = Astro.props;
    font-size: 15px;
    display: flex;
    align-items: center;
+   text-indent: -9999px;  
+   position: relative;
+   width: 50px;
+
+   @media screen and (min-width: 767px) {
+     text-indent: 0;
+     width: 100%;
+   }
 
    &[data-id-counter] {
     &:after {
@@ -33,13 +41,20 @@ const { active, icon, counter } = Astro.props;
 
     &:before {
       content: "";
-      width: 5px;
-      height: 25px;
       background: #6c5ec7;
+      height: 3px;
+      width: 100%;
+      bottom: -10px;
       position: absolute;
-      left: -20px;
-      border-radius: 0px 3px 3px 0px;
-      transition: background-color 0.15s linear 0s;
+
+      @media screen and (min-width: 767px) {
+        width: 5px;
+        height: 25px;
+        position: absolute;
+        left: -20px;
+        border-radius: 0px 3px 3px 0px;
+        transition: background-color 0.15s linear 0s;
+      }
     }
    }
 

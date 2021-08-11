@@ -1,24 +1,64 @@
+---
+import Search from '../components/icons/Search.astro';
+---
 
 <style lang="scss">
   .wrapper {
     display: flex;
+    margin: 16px 30px;
+    height: 40px;
+    gap: 16px;
+  }
+
+  .search {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .icon {
+      position: absolute;
+      left: 15px;
+      top: 11px;
+      opacity: .4;
+    }
+
+    input {
+      -webkit-appearance: none;
+      border: 1px solid #c6becf;
+      border-radius: 4px;
+      padding: 10px 15px 10px 38px;
+      font-family: var(--font-family);
+    }
   }
 
   input {
+    height: 100%;
     width: 100%;
+  }
+  
+  .buttonbar {
+    display: flex;
+    button:nth-child(1) {
+      border-radius: 3px 0 0 3px;
+      margin-right: -1px;
+    }
+
+    .active {
+      background: #6c5fc6;
+      color: white;
+    }
   }
 </style>
 
 <div class="wrapper">
-  <div>
-    <select name="cars" id="cars">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
+  <div class="search">
+    <div class="icon">
+      <Search />
+    </div>
+    <input type="search" placeholder="Search for notifications by name or type..."/>
   </div>
-  <div>
-    <input type="search" />
+  <div class="buttonbar">
+    <button class="active">Unread</button>
+    <button>Read</button>
   </div>
 </div>
