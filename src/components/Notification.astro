@@ -59,6 +59,7 @@ import Check from '../components/icons/Check.astro'
     display: none;
 
     button {
+      border-radius: 4px;
       width: 36px;
       height: 36px;
     }
@@ -129,7 +130,8 @@ import Check from '../components/icons/Check.astro'
 
 
   <div class="actions">
-    <button><Check /></button>
+    <button class="check" onclick="
+      console.log(this.parentElement.parentElement.remove());"><Check /></button>
     <button><Bell /></button>
   </div>
 </div>

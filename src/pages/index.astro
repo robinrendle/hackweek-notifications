@@ -6,15 +6,6 @@ import Filters from '../components/Filters.astro';
 import Left from '../components/icons/Left.astro';
 import Right from '../components/icons/Right.astro';
 ---
-
-<script>
-const checkboxAll = document.querySelector('#selectall');
-const otherCheckboxes = document.querySelectorAll('.checkbox');
-checkboxAll.addEventListener('click', function(e){
-  otherCheckboxes.checked;
-});
-</script>
-
 <style lang="scss">
   .table {
     display: flex;
@@ -58,7 +49,7 @@ checkboxAll.addEventListener('click', function(e){
         border-radius: 3px 0px 0px 3px;
       }
       &:last-of-type {
-        border-left: 0;
+        border-left: 0; 
         border-radius: 0px 3px 3px 0px;
       }
     }
@@ -121,7 +112,7 @@ checkboxAll.addEventListener('click', function(e){
       title='Issue assigned to #workflow by Jane Schmidt' 
       desc='TypeError - JavaScript'
       type='Workflow' 
-      time='5 minutes ago'
+      time='6 minutes ago'
       read />
     <Notification 
       title='Alert: Crash Free Sessions Low' 
@@ -132,12 +123,12 @@ checkboxAll.addEventListener('click', function(e){
       title='New comment by Jane Schmidt' 
       desc='“This might be related to issue 717”'
       type='Workflow' 
-      time='7 minutes ago'/>
+      time='8 minutes ago'/>
     <Notification 
       title='Issue assigned to you by Jane Schmidt' 
       desc='TypeError - JavaScript'
       type='Workflow' 
-      time='7 minutes ago'/>
+      time='9 minutes ago'/>
     <Notification 
       title='Issue assigned to you by Jane Schmidt' 
       desc='TypeError - JavaScript'
