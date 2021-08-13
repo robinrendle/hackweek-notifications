@@ -13,17 +13,17 @@ const { active, icon, counter } = Astro.props;
   }
 
   a {
-   display: block;
-   color: var(--color-subtext);
-   text-decoration: none;
-   transition: none;
-   height: 34px;
-   font-size: 15px;
-   display: flex;
-   align-items: center;
-   text-indent: -9999px;  
-   position: relative;
-   width: 50px;
+    display: flex;
+    align-items: center;
+    color: var(--color-subtext);
+    text-decoration: none;
+    transition: none;
+    height: 34px;
+    font-size: 15px;
+    align-items: center;
+    text-indent: -9999px;  
+    position: relative;
+    width: 50px;
 
    @media screen and (min-width: 767px) {
      text-indent: 0;
@@ -71,6 +71,7 @@ const { active, icon, counter } = Astro.props;
   .content {
     margin-left: 10px;
     display: flex;
+    align-items: center;
     gap: 10px;
   }
 </style>
