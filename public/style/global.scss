@@ -39,13 +39,22 @@ h1 {
 .counter {
   background: var(--color-red);
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
   display: grid;
   place-items: center;
   font-size: 12px;
-  position: relative;
-  top: -2px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+
+  @media screen and (min-width: 767px) {
+    position: relative;
+    top: -2px;
+    right: 0;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .unread {
